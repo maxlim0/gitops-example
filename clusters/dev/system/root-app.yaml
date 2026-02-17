@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app-system
+  namespace: argocd
+  labels:
+  app.kubernetes.io/part-of: root-app-system
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/maxlim0/cicd-example.git
+    targetRevision: main
+    path: gitops/clusters/dev/system
+
+    directory:
+      recurse: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
