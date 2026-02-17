@@ -4,7 +4,7 @@ metadata:
   name: root-app-system
   namespace: argocd
   labels:
-  app.kubernetes.io/part-of: root-app-system
+    app.kubernetes.io/part-of: root-app-system
 
 spec:
   project: default
