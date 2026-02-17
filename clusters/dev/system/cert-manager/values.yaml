@@ -22,4 +22,4 @@ serviceAccount:
   name: cert-manager
 
 nodeSelector:
-node-role: system
+  node-role: system

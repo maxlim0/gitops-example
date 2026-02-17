@@ -6,14 +6,17 @@ metadata:
 spec:
   project: default
 
-  source:
-    repoURL: https://kubernetes.github.io/ingress-nginx
-    chart: ingress-nginx
-    targetRevision: 4.10.1
-    helm:
-      releaseName: ingress-nginx
-      valueFiles:
-        - values.yaml
+  sources:
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      targetRevision: 4.10.1
+      helm:
+        releaseName: ingress-nginx
+        valueFiles:
+          - $values/clusters/dev/system/ingress-nginx/values.yaml
+    - repoURL: https://github.com/maxlim0/gitops-example.git
+      targetRevision: main
+      ref: values
 
   destination:
     server: https://kubernetes.default.svc
