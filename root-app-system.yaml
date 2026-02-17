@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/maxlim0/gitops-example.git
     targetRevision: main
-    path: gitops/clusters/dev/system
+    path: clusters/dev/system
 
     directory:
       recurse: true

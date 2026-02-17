@@ -21,11 +21,5 @@ serviceAccount:
   create: true
   name: cert-manager
 
-tolerations:
-- key: "system"
-  operator: "Equal"
-  value: "true"
-  effect: "NoSchedule"
-
 nodeSelector:
 node-role: system

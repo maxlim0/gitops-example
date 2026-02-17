@@ -3,12 +3,6 @@ controller:
 
   replicaCount: 1
 
-  tolerations:
-    - key: "system"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-
   nodeSelector:
     node-role: system
 
