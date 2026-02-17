@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://charts.karpenter.sh
     chart: karpenter
-    targetRevision: 1.8.1
+    targetRevision: 0.16.3
     helm:
       releaseName: karpenter
       values: |
