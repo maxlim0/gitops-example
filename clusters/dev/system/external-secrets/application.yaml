@@ -7,12 +7,12 @@ metadata:
     argocd.argoproj.io/sync-wave: "-10"
 spec:
   project: default
-  source:
+  sources:
     - repoURL: https://charts.external-secrets.io
       chart: external-secrets
       targetRevision: 2.0.0
       helm:
-        releaseName: ingress-nginx
+        releaseName: external-secrets
         valueFiles:
           - $values/clusters/dev/system/external-secrets/values.yaml
     - repoURL: https://github.com/maxlim0/gitops-example.git
