@@ -3,7 +3,7 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
-  role: eks-cluster-karpenter-node
+  role: lab-eks-dev-karpenter-node
   amiFamily: AL2023
   amiSelectorTerms:
     - alias: al2023@latest
