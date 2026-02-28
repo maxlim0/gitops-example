@@ -3,11 +3,9 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
-  amiFamily: AL2 # или Bottlerocket
-  role: KarpenterNodeRole-eks-cluster
-
+  amiFamily: AL2023
   amiSelectorTerms:
-    - alias: al2@latest
+    - alias: al2023@latest
 
   subnetSelectorTerms:
     - tags:
