@@ -3,18 +3,24 @@ kind: Application
 metadata:
   name: karpenter
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
+
 spec:
   project: default
 
-  source:
-    repoURL: public.ecr.aws/karpenter
-    chart: karpenter
-    targetRevision: 1.9.0
-    helm:
-      releaseName: karpenter
-      values: |
-        settings:
-          clusterName: lab-eks-dev
+  sources:
+    - repoURL: public.ecr.aws/karpenter
+      chart: karpenter
+      targetRevision: 1.9.0
+      helm:
+        releaseName: karpenter
+        values: |
+          settings:
+            clusterName: lab-eks-dev
+    - repoURL: https://github.com/maxlim0/gitops-example.git
+      targetRevision: main
+      path: clusters/dev/system/karpenter/resources
 
   destination:
     server: https://kubernetes.default.svc
