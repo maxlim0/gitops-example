@@ -6,6 +6,9 @@ spec:
   amiFamily: AL2 # или Bottlerocket
   role: KarpenterNodeRole-eks-cluster
 
+  amiSelectorTerms:
+    - alias: al2@latest
+
   subnetSelectorTerms:
     - tags:
         karpenter.sh/discovery: lab-eks-dev
