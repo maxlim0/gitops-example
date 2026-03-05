@@ -18,6 +18,7 @@ spec:
         values: |
           settings:
             clusterName: lab-eks-dev
+            logLevel: debug
     - repoURL: https://github.com/maxlim0/gitops-example.git
       targetRevision: main
       path: clusters/dev/system/karpenter/resources
