@@ -5,11 +5,11 @@ metadata:
 spec:
   template:
     metadata:
-    labels:
-      owner: karpenter
-      workload: homelab
-      node-type: cheap-spot
-      lifecycle: ephemeral
+      labels:
+        owner: karpenter
+        workload: homelab
+        node-type: cheap-spot
+        lifecycle: ephemeral
     spec:
       nodeClassRef:
         name: default
